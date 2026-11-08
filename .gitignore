@@ -30,3 +30,5 @@ rustc-ice-*.txt
 
 .junie
 .idea
+.ds_store
+.DS_Store
