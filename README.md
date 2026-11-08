@@ -91,13 +91,14 @@ athia/
 ├── CHANGELOG.md            # Version history
 ├── SUPPORT.md              # Where to get help
 ├── AUTHORS.md              # Contributor attribution
-├── docs/                   # Detailed documentation
+└── docs/                   # Documentation + Static project website (GitHub Pages)
 │   ├── architecture/       # Architecture deep-dives
 │   ├── design/             # Design documents and principles
 │   ├── development/        # Development guidelines
 │   ├── decisions/          # Architecture Decision Records
-│   └── community/          # Community resources
-└── webpage/                # Static project website
+│   ├── community/          # Community resources
+│   ├── index.html          # Website homepage
+│   └── assets/             # Website CSS, JS, images
 ```
 
 ## License
@@ -114,7 +115,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get involved.
 
 ## Website
 
-The Athia project website is available at the `webpage/` directory. To view it locally, open `webpage/index.html` in a web browser.
+The Athia project website is available in the `docs/` directory. To view it locally, open `docs/index.html` in a web browser. The site is configured for GitHub Pages deployment from the `docs/` folder.
 
 > **Note:** The public website URL is not yet configured. A placeholder is used until hosting is established.
 
