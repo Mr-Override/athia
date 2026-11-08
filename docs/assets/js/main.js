@@ -62,7 +62,45 @@ document.addEventListener('DOMContentLoaded', () => {
   if (GITHUB_OWNER && GITHUB_REPO) {
     fetchStats();
   }
+
+  // Scroll reveal animations
+  initScrollReveal();
 });
+
+// === Scroll Reveal ===
+function initScrollReveal() {
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  const sections = document.querySelectorAll('.section, .community-cta, .page-header, .content');
+  if (!sections.length) return;
+
+  // Add reveal class to sections
+  sections.forEach(section => {
+    section.classList.add('reveal');
+  });
+
+  // Use IntersectionObserver for performant scroll detection
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    sections.forEach(section => observer.observe(section));
+  } else {
+    // Fallback: show all sections immediately
+    sections.forEach(section => section.classList.add('visible'));
+  }
+}
 
 // === GitHub Stats ===
 async function fetchStats() {
@@ -165,32 +203,24 @@ async function fetchStats() {
 }
 
 function renderStats(container, stats) {
-  container.innerHTML = `
+  const cards = [
+    { icon: '★', value: stats.stars, label: 'Stars' },
+    { icon: '⧉', value: stats.forks, label: 'Forks' },
+    { icon: '👤', value: stats.contributors, label: 'Contributors' },
+    { icon: '◉', value: stats.openIssues, label: 'Open Issues' },
+    { icon: '✓', value: stats.closedIssues, label: 'Closed Issues' },
+    { icon: '⏱', value: stats.latestCommit || '—', label: 'Last Commit' }
+  ];
+
+  container.innerHTML = cards.map(card => `
     <div class="stat-card">
-      <div class="stat-value">${stats.stars}</div>
-      <div class="stat-label">Stars</div>
+      <div class="stat-icon">${card.icon}</div>
+      <div class="stat-content">
+        <div class="stat-value">${card.value}</div>
+        <div class="stat-label">${card.label}</div>
+      </div>
     </div>
-    <div class="stat-card">
-      <div class="stat-value">${stats.forks}</div>
-      <div class="stat-label">Forks</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${stats.contributors}</div>
-      <div class="stat-label">Contributors</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${stats.openIssues}</div>
-      <div class="stat-label">Open Issues</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${stats.closedIssues}</div>
-      <div class="stat-label">Closed Issues</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">${stats.latestCommit || '—'}</div>
-      <div class="stat-label">Latest Commit</div>
-    </div>
-  `;
+  `).join('');
 
   // Update info text
   const infoEl = document.getElementById('stats-info');
@@ -198,27 +228,25 @@ function renderStats(container, stats) {
     const time = new Date(lastFetchTime).toLocaleString();
     infoEl.innerHTML = `
       <p>Last refreshed: ${time}</p>
-      <p>Statistics are fetched from the public GitHub API. Commit count represents only the accessible commit history.</p>
-      <button class="stats-refresh" onclick="refreshStats()">Refresh</button>
+      <p>Statistics are fetched from the public GitHub API.</p>
+      <button class="stats-refresh" onclick="refreshStats()">↻ Refresh stats</button>
     `;
   }
 }
 
 function showStatsLoading(container) {
-  container.innerHTML = `
-    <div class="stat-card"><div class="stat-loading">Loading...</div></div>
-    <div class="stat-card"><div class="stat-loading">Loading...</div></div>
-    <div class="stat-card"><div class="stat-loading">Loading...</div></div>
-    <div class="stat-card"><div class="stat-loading">Loading...</div></div>
-    <div class="stat-card"><div class="stat-loading">Loading...</div></div>
-    <div class="stat-card"><div class="stat-loading">Loading...</div></div>
-  `;
+  container.innerHTML = Array.from({length: 6}, () => `
+    <div class="stat-loading">
+      <div class="stat-loading-icon"></div>
+      Loading...
+    </div>
+  `).join('');
 }
 
 function showStatsError(container, message) {
   container.innerHTML = `
-    <div class="stat-card" style="grid-column: 1 / -1;">
-      <p style="color: var(--color-error);">Unable to load repository statistics.</p>
+    <div class="stat-card" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+      <p style="color: var(--color-error); margin:0;">Unable to load repository statistics.</p>
       <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-top: var(--space-sm);">${message}</p>
     </div>
   `;
@@ -228,8 +256,8 @@ function showStatsPlaceholder() {
   const statsEl = document.getElementById('stats-grid');
   if (!statsEl) return;
   statsEl.innerHTML = `
-    <div class="stat-card" style="grid-column: 1 / -1;">
-      <p style="color: var(--color-text-secondary);">
+    <div class="stat-card" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+      <p style="color: var(--color-text-secondary); margin:0;">
         Repository statistics will appear here once the GitHub repository is configured.
       </p>
       <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-top: var(--space-sm);">

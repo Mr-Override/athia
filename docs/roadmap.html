@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roadmap — Athia</title>
-  <meta name="description" content="Athia's phased development roadmap from bootable kernel to daily-driver quality.">
+  <title>Athia Roadmap — Development Phases from Kernel to Stable Release</title>
+  <meta name="description" content="Athia's phased development roadmap from bootable kernel foundation to daily-driver quality. Six phases: Genesis, Core, Systems, Desktop, Ecosystem, and Stable.">
+  <meta name="keywords" content="Athia, roadmap, development, phases, kernel, bootable, microkernel, desktop, ecosystem, stable release, milestones, open source operating system">
+  <meta name="author" content="Athia contributors">
+  <meta name="theme-color" content="#0a1628">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mr-override.github.io/athia/roadmap.html">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Athia Roadmap — Development Phases from Kernel to Stable Release">
+  <meta property="og:description" content="Athia's phased development roadmap from bootable kernel foundation to daily-driver quality.">
+  <meta property="og:url" content="https://mr-override.github.io/athia/roadmap.html">
+  <meta property="og:site_name" content="Athia">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Athia Roadmap — Development Phases from Kernel to Stable Release">
+  <meta name="twitter:description" content="Athia's phased development roadmap from bootable kernel to daily-driver quality.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Athia Roadmap",
+    "description": "Athia's phased development roadmap from bootable kernel to daily-driver quality.",
+    "url": "https://mr-override.github.io/athia/roadmap.html",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Athia",
+      "url": "https://mr-override.github.io/athia/"
+    }
+  }
+  </script>
 </head>
 <body>
   <header class="header">
@@ -31,117 +63,147 @@
   </div>
 
   <div class="content container">
-    <p><em>No fixed timeline has been established. Development velocity depends on community participation and available resources.</em></p>
+    <p class="arch-disclaimer"><em>No fixed timeline. Velocity depends on community participation.</em></p>
 
     <div class="roadmap-phase">
-      <h3>Phase 1: Genesis</h3>
-      <span class="phase-status status-planned">Planned</span>
-      <p>Bootable kernel foundation — a minimal kernel that can boot on x86_64 hardware.</p>
+      <div class="phase-header">
+        <div class="phase-icon">🌱</div>
+        <div>
+          <h3>Phase 1: Genesis</h3>
+          <span class="phase-status status-planned">Planned</span>
+        </div>
+      </div>
+      <p class="phase-desc">Bootable kernel foundation — minimal kernel that boots on x86_64.</p>
       <div class="roadmap-milestone">
         <h4>Kernel skeleton</h4>
-        <p>Entry point, GDT/IDT setup, kernel memory layout. Measurable: kernel loads in QEMU.</p>
+        <p>Entry point, GDT/IDT, memory layout. Kernel loads in QEMU.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Memory management</h4>
-        <p>Physical allocator, virtual memory, kernel heap. Measurable: allocate and free without corruption.</p>
+        <p>Physical allocator, virtual memory, kernel heap.</p>
       </div>
       <div class="roadmap-milestone">
-        <h4>Basic hardware abstraction</h4>
-        <p>Serial output, timer interrupts. Measurable: print to serial console.</p>
+        <h4>Hardware abstraction</h4>
+        <p>Serial output, timer interrupts.</p>
       </div>
     </div>
 
     <div class="roadmap-phase">
-      <h3>Phase 2: Core</h3>
-      <span class="phase-status status-planned">Planned</span>
-      <p>Kernel functionality and process isolation — a functional microkernel with IPC and scheduling.</p>
+      <div class="phase-header">
+        <div class="phase-icon">⚙️</div>
+        <div>
+          <h3>Phase 2: Core</h3>
+          <span class="phase-status status-planned">Planned</span>
+        </div>
+      </div>
+      <p class="phase-desc">Functional microkernel with IPC and scheduling.</p>
       <div class="roadmap-milestone">
         <h4>Process management</h4>
-        <p>Process creation, isolated address spaces, capability system.</p>
+        <p>Isolated address spaces, capability system.</p>
       </div>
       <div class="roadmap-milestone">
-        <h4>Inter-Process Communication</h4>
-        <p>Message passing, capability-based routing, sync and async patterns.</p>
+        <h4>IPC</h4>
+        <p>Message passing, capability-based routing.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Scheduler</h4>
-        <p>Priority-based preemptive scheduling with context switching.</p>
+        <p>Priority-based preemptive with context switching.</p>
       </div>
     </div>
 
     <div class="roadmap-phase">
-      <h3>Phase 3: Systems</h3>
-      <span class="phase-status status-planned">Planned</span>
-      <p>Essential hardware and system services — filesystem, networking, devices, and graphics.</p>
+      <div class="phase-header">
+        <div class="phase-icon">🔧</div>
+        <div>
+          <h3>Phase 3: Systems</h3>
+          <span class="phase-status status-planned">Planned</span>
+        </div>
+      </div>
+      <p class="phase-desc">Essential hardware and system services.</p>
       <div class="roadmap-milestone">
-        <h4>Filesystem service</h4>
-        <p>Basic filesystem with file read/write via IPC.</p>
+        <h4>Filesystem</h4>
+        <p>File read/write via IPC.</p>
       </div>
       <div class="roadmap-milestone">
-        <h4>Device service</h4>
-        <p>Keyboard and mouse input delivered to user-space.</p>
+        <h4>Devices</h4>
+        <p>Keyboard and mouse to user-space.</p>
       </div>
       <div class="roadmap-milestone">
-        <h4>Graphics service</h4>
-        <p>Framebuffer output and display protocol foundation.</p>
+        <h4>Graphics</h4>
+        <p>Framebuffer output, display protocol.</p>
       </div>
     </div>
 
     <div class="roadmap-phase">
-      <h3>Phase 4: Desktop</h3>
-      <span class="phase-status status-planned">Planned</span>
-      <p>Graphical environment — window management, theming, and user interaction.</p>
+      <div class="phase-header">
+        <div class="phase-icon">🖥️</div>
+        <div>
+          <h3>Phase 4: Desktop</h3>
+          <span class="phase-status status-planned">Planned</span>
+        </div>
+      </div>
+      <p class="phase-desc">Graphical environment with window management and theming.</p>
       <div class="roadmap-milestone">
         <h4>Window manager</h4>
-        <p>Window creation, resizing, movement, and stacking.</p>
+        <p>Window creation, resizing, stacking.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Athia Shell</h4>
-        <p>Desktop panel, application launcher, and system tray.</p>
+        <p>Panel, launcher, system tray.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Appearance Engine</h4>
-        <p>Theme system with Midnight, Daylight, Monochrome, and Aurora.</p>
+        <p>Midnight, Daylight, Monochrome, Aurora themes.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Traffic Control</h4>
-        <p>Application search, file search, and system settings access.</p>
+        <p>App search, file search, settings.</p>
       </div>
     </div>
 
     <div class="roadmap-phase">
-      <h3>Phase 5: Ecosystem</h3>
-      <span class="phase-status status-planned">Planned</span>
-      <p>Package management, applications, and developer tools.</p>
+      <div class="phase-header">
+        <div class="phase-icon">📦</div>
+        <div>
+          <h3>Phase 5: Ecosystem</h3>
+          <span class="phase-status status-planned">Planned</span>
+        </div>
+      </div>
+      <p class="phase-desc">Package management, applications, and developer tools.</p>
       <div class="roadmap-milestone">
         <h4>Athia Packages</h4>
-        <p>Package format, repository, installation, and update.</p>
+        <p>Package format, repository, updates.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Athia SDK</h4>
-        <p>Application API framework and UI toolkit.</p>
+        <p>App API framework and UI toolkit.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Athia Studio</h4>
-        <p>IDE with editing, building, and debugging.</p>
+        <p>IDE with editing, building, debugging.</p>
       </div>
     </div>
 
     <div class="roadmap-phase">
-      <h3>Phase 6: Stable</h3>
-      <span class="phase-status status-planned">Planned</span>
-      <p>Daily-driver quality — stable, secure, and usable as a primary operating system.</p>
+      <div class="phase-header">
+        <div class="phase-icon">✅</div>
+        <div>
+          <h3>Phase 6: Stable</h3>
+          <span class="phase-status status-planned">Planned</span>
+        </div>
+      </div>
+      <p class="phase-desc">Daily-driver quality — stable, secure, and usable as a primary OS.</p>
       <div class="roadmap-milestone">
         <h4>Stability</h4>
-        <p>Extended stability testing without crashes.</p>
+        <p>Extended testing without crashes.</p>
       </div>
       <div class="roadmap-milestone">
-        <h4>Security hardening</h4>
-        <p>Security audit and Athia Sentinel.</p>
+        <h4>Security</h4>
+        <p>Audit and Athia Sentinel.</p>
       </div>
       <div class="roadmap-milestone">
         <h4>Community readiness</h4>
-        <p>Community can independently contribute, review, and release updates.</p>
+        <p>Independent contribution, review, and releases.</p>
       </div>
     </div>
 

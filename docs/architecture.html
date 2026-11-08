@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Architecture — Athia</title>
-  <meta name="description" content="Learn about Athia's independent microkernel architecture, system services, and desktop environment.">
+  <title>Athia Architecture — Microkernel, System Services, and Desktop Environment</title>
+  <meta name="description" content="Learn about Athia's independent microkernel architecture, system services, desktop environment, capability-based security, and Rust-first design.">
+  <meta name="keywords" content="Athia, architecture, microkernel, system services, desktop environment, Rust, IPC, capability-based security, process isolation, hardware abstraction">
+  <meta name="author" content="Athia contributors">
+  <meta name="theme-color" content="#0a1628">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mr-override.github.io/athia/architecture.html">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Athia Architecture — Microkernel, System Services, and Desktop Environment">
+  <meta property="og:description" content="Learn about Athia's independent microkernel architecture, system services, desktop environment, and Rust-first design.">
+  <meta property="og:url" content="https://mr-override.github.io/athia/architecture.html">
+  <meta property="og:site_name" content="Athia">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Athia Architecture — Microkernel, System Services, and Desktop Environment">
+  <meta name="twitter:description" content="Learn about Athia's independent microkernel architecture and Rust-first design.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Athia Architecture",
+    "description": "Learn about Athia's independent microkernel architecture, system services, and desktop environment.",
+    "url": "https://mr-override.github.io/athia/architecture.html",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Athia",
+      "url": "https://mr-override.github.io/athia/"
+    }
+  }
+  </script>
 </head>
 <body>
   <header class="header">
@@ -31,7 +63,7 @@
   </div>
 
   <div class="content container">
-    <p><em>All architecture described below is proposed and not yet implemented.</em></p>
+    <p class="arch-disclaimer"><em>All architecture described below is proposed and not yet implemented.</em></p>
 
     <h2>System Architecture</h2>
     <div class="arch-diagram">
@@ -41,47 +73,120 @@
       <div class="arch-layer arch-layer-hw">Hardware</div>
     </div>
 
-    <h2>Athia Core (Microkernel)</h2>
-    <p>The microkernel provides only essential services: memory management, scheduling, inter-process communication, and hardware abstraction. Everything else runs in isolated user-space services.</p>
-    <ul>
-      <li><strong>Memory management</strong> — Capability-based physical and virtual memory</li>
-      <li><strong>Scheduling</strong> — Priority-based preemptive scheduling with real-time support</li>
-      <li><strong>IPC</strong> — Fast, type-safe, capability-based message passing</li>
-      <li><strong>Hardware abstraction</strong> — Unified interface to hardware resources</li>
-    </ul>
+    <h2>Athia Core</h2>
+    <p class="section-lead">The microkernel provides only essential services. Everything else runs in isolated user-space services.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">🧠</div>
+        <h4>Memory Management</h4>
+        <p>Capability-based physical and virtual memory.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">⏱️</div>
+        <h4>Scheduling</h4>
+        <p>Priority-based preemptive with real-time support.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">💬</div>
+        <h4>IPC</h4>
+        <p>Fast, type-safe, capability-based message passing.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🔌</div>
+        <h4>Hardware Abstraction</h4>
+        <p>Unified interface to hardware resources.</p>
+      </div>
+    </div>
 
     <h2>System Services</h2>
-    <p>System services run in user space as isolated processes:</p>
-    <ul>
-      <li><strong>Filesystem service</strong> — Storage, file operations, and namespace management</li>
-      <li><strong>Networking service</strong> — Network interfaces, protocols, and connections</li>
-      <li><strong>Device service</strong> — Hardware devices, input, and peripherals</li>
-      <li><strong>Graphics service</strong> — Display output, compositing, and hardware acceleration</li>
-    </ul>
+    <p class="section-lead">Isolated user-space processes handling core functionality.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">📁</div>
+        <h4>Filesystem</h4>
+        <p>Storage, file operations, namespace management.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🌐</div>
+        <h4>Networking</h4>
+        <p>Interfaces, protocols, and connections.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🖱️</div>
+        <h4>Devices</h4>
+        <p>Hardware devices, input, and peripherals.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎨</div>
+        <h4>Graphics</h4>
+        <p>Display output, compositing, acceleration.</p>
+      </div>
+    </div>
 
     <h2>Desktop Architecture</h2>
-    <p>Athia Desktop provides the graphical user interface:</p>
-    <ul>
-      <li><strong>Athia Shell</strong> — Panel (dock/taskbar), Traffic Control, and system tray</li>
-      <li><strong>Window Manager</strong> — Modular: tiling, floating, or hybrid modes</li>
-      <li><strong>Appearance Engine</strong> — Theming with design tokens and four official themes</li>
-      <li><strong>Display Server</strong> — ADP protocol, compositor, and hardware acceleration</li>
-      <li><strong>Extension Host</strong> — Sandbox-first extensions with WebAssembly/WASI</li>
-    </ul>
+    <p class="section-lead">The graphical user interface built for customization and performance.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">🖥️</div>
+        <h4>Athia Shell</h4>
+        <p>Panel, Traffic Control, and system tray.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🪟</div>
+        <h4>Window Manager</h4>
+        <p>Tiling, floating, or hybrid modes.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎨</div>
+        <h4>Appearance Engine</h4>
+        <p>Design tokens and four official themes.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📺</div>
+        <h4>Display Server</h4>
+        <p>ADP protocol, compositor, acceleration.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🧩</div>
+        <h4>Extension Host</h4>
+        <p>Sandbox-first extensions with WebAssembly.</p>
+      </div>
+    </div>
 
     <h2>Rust-First Design</h2>
-    <p>Athia is written primarily in Rust for memory safety, concurrency safety, and zero-cost abstractions. No garbage collector, no data races, no buffer overflows at the language level.</p>
+    <div class="highlight-box">
+      <div class="highlight-icon">🦀</div>
+      <div class="highlight-content">
+        <p>Athia is written primarily in Rust for memory safety, concurrency safety, and zero-cost abstractions. No garbage collector, no data races, no buffer overflows at the language level.</p>
+      </div>
+    </div>
 
     <h2>Security</h2>
-    <ul>
-      <li><strong>Capability-based security</strong> — Unforgeable tokens grant specific rights</li>
-      <li><strong>Process isolation</strong> — Every process runs in its own address space</li>
-      <li><strong>Sandbox-first</strong> — Applications run in sandboxes by default</li>
-      <li><strong>Memory safety</strong> — Rust enforces safety at compile time</li>
-    </ul>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">🔑</div>
+        <h4>Capability-Based</h4>
+        <p>Unforgeable tokens grant specific rights.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🧱</div>
+        <h4>Process Isolation</h4>
+        <p>Every process in its own address space.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🏝️</div>
+        <h4>Sandbox-First</h4>
+        <p>Applications sandboxed by default.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🛡️</div>
+        <h4>Memory Safety</h4>
+        <p>Rust enforces safety at compile time.</p>
+      </div>
+    </div>
 
     <h2>Learn More</h2>
-    <p>For detailed architecture documentation, see the <a href="#" data-repo-path="ARCHITECTURE.md">ARCHITECTURE.md</a> file and the <a href="#" data-repo-path="docs/architecture/">architecture documentation</a>.</p>
+    <p>For detailed documentation, see <a href="#" data-repo-path="ARCHITECTURE.md">ARCHITECTURE.md</a> and the <a href="#" data-repo-path="docs/architecture/">architecture docs</a>.</p>
   </div>
 
   <footer class="footer">

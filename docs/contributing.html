@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contributing — Athia</title>
-  <meta name="description" content="Learn how to contribute to the Athia operating system project.">
+  <title>Contributing to Athia — Documentation, Design, Rust, and More</title>
+  <meta name="description" content="Learn how to contribute to the Athia operating system project. A practical guide covering documentation, design, Rust development, testing, and pull request workflow.">
+  <meta name="keywords" content="Athia, contributing, contribute, open source, operating system, Rust, documentation, design, testing, pull request, developer guide">
+  <meta name="author" content="Athia contributors">
+  <meta name="theme-color" content="#0a1628">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mr-override.github.io/athia/contributing.html">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contributing to Athia — Documentation, Design, Rust, and More">
+  <meta property="og:description" content="Learn how to contribute to the Athia operating system project. A practical guide for all skill levels.">
+  <meta property="og:url" content="https://mr-override.github.io/athia/contributing.html">
+  <meta property="og:site_name" content="Athia">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contributing to Athia — Documentation, Design, Rust, and More">
+  <meta name="twitter:description" content="Learn how to contribute to the Athia operating system project.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Contributing to Athia",
+    "description": "Learn how to contribute to the Athia operating system project.",
+    "url": "https://mr-override.github.io/athia/contributing.html",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Athia",
+      "url": "https://mr-override.github.io/athia/"
+    }
+  }
+  </script>
 </head>
 <body>
   <header class="header">
@@ -32,60 +64,76 @@
 
   <div class="content container">
     <h2>You Don't Need to Be a Systems Programmer</h2>
-    <p>Athia needs many kinds of contributors. While kernel development is part of the project, it is not the only part. Documentation, design, testing, architecture discussion, and community building are all essential contributions.</p>
+    <p>Kernel development is only one part. Documentation, design, testing, architecture discussion, and community building are all essential.</p>
 
-    <h2>Documentation Contributions</h2>
-    <p>Documentation is one of the most valuable ways to contribute, especially in the early stages:</p>
-    <ul>
-      <li>Improve existing documentation for clarity and accuracy</li>
-      <li>Write new documentation for under-documented areas</li>
-      <li>Create diagrams and visual aids</li>
-      <li>Review documentation for consistency and tone</li>
-    </ul>
-
-    <h2>Design Contributions</h2>
-    <p>Visual and UX design help shape the user experience:</p>
-    <ul>
-      <li>Propose design improvements for the desktop environment</li>
-      <li>Contribute to the design system and design tokens</li>
-      <li>Create theme designs and variations</li>
-      <li>Review and refine design documents</li>
-    </ul>
-
-    <h2>Rust Contributions</h2>
-    <p>When Rust code is contributed, it should follow these guidelines:</p>
-    <ul>
-      <li>Follow Rust idioms and conventions</li>
-      <li>Write safe code — prefer safe Rust</li>
-      <li>Document public APIs with KDoc comments</li>
-      <li>Handle errors properly with Result and Option</li>
-      <li>Write tests for new functionality</li>
-    </ul>
-
-    <h2>Testing &amp; Feedback</h2>
-    <p>Testing is essential for a secure operating system:</p>
-    <ul>
-      <li>Design test strategies and test plans</li>
-      <li>Validate implementations against design documents</li>
-      <li>Report bugs with clear reproduction steps</li>
-      <li>Review test coverage and suggest improvements</li>
-    </ul>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">📝</div>
+        <h4>Documentation</h4>
+        <p>Improve clarity, write new docs, create diagrams, review for consistency.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎨</div>
+        <h4>Design</h4>
+        <p>Desktop UX, design tokens, themes, and design documents.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🦀</div>
+        <h4>Rust Code</h4>
+        <p>Safe idioms, documented APIs, proper error handling, tests.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🧪</div>
+        <h4>Testing</h4>
+        <p>Test strategies, validate against designs, report bugs clearly.</p>
+      </div>
+    </div>
 
     <h2>Pull Request Workflow</h2>
-    <ol>
-      <li>Describe the change — explain what you are changing and why</li>
-      <li>Reference related issues — link to relevant discussions</li>
-      <li>Follow project conventions — match existing style and structure</li>
-      <li>Keep changes focused — one pull request per coherent change</li>
-      <li>Be responsive — respond to review feedback</li>
-    </ol>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Describe the change</h4>
+          <p>Explain what you're changing and why.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Reference issues</h4>
+          <p>Link to relevant discussions.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Follow conventions</h4>
+          <p>Match existing style and structure.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Keep it focused</h4>
+          <p>One PR per coherent change.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>Be responsive</h4>
+          <p>Respond to review feedback.</p>
+        </div>
+      </div>
+    </div>
 
     <h2>Get Started</h2>
-    <p>Read the <a href="#" data-repo-path="CONTRIBUTING.md">CONTRIBUTING.md</a> file for detailed guidelines and the <a href="#" data-repo-path="docs/community/joining-athia.md">Joining Athia</a> guide for a step-by-step introduction.</p>
+    <p>Read <a href="#" data-repo-path="CONTRIBUTING.md">CONTRIBUTING.md</a> for detailed guidelines and <a href="#" data-repo-path="docs/community/joining-athia.md">Joining Athia</a> for a step-by-step intro.</p>
 
-    <div style="text-align:center; margin-top:var(--space-2xl);">
-      <p style="color:var(--color-accent-primary); font-weight:var(--font-weight-semibold); font-size:var(--font-size-xl);">Every contribution matters.</p>
-      <a href="#" data-repo-path="CONTRIBUTING.md" class="btn btn-primary" style="margin-top:var(--space-md);">Read the full guidelines</a>
+    <div class="page-cta">
+      <p class="cta-highlight">Every contribution matters.</p>
+      <a href="#" data-repo-path="CONTRIBUTING.md" class="btn btn-primary">Read the full guidelines</a>
     </div>
   </div>
 
