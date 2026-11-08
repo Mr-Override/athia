@@ -115,9 +115,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get involved.
 
 ## Website
 
-The Athia project website is available in the `docs/` directory. To view it locally, open `docs/index.html` in a web browser. The site is configured for GitHub Pages deployment from the `docs/` folder.
+The Athia project website is available at **<https://mr-override.github.io/athia/>**.
 
-> **Note:** The public website URL is not yet configured. A placeholder is used until hosting is established.
+The website source is in the `docs/` directory. To view it locally, open `docs/index.html` in a web browser. The site is deployed via GitHub Pages from the `docs/` folder.
 
 ## Getting in Touch
 

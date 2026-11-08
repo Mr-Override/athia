@@ -7,11 +7,12 @@
  */
 
 // === Configuration ===
-const GITHUB_OWNER = 'Mr-Override';     // e.g., 'athia-os'
-const GITHUB_REPO = 'athia';      // e.g., 'athia'
+const GITHUB_OWNER = 'Mr-Override';
+const GITHUB_REPO = 'athia';
 const REPO_URL = GITHUB_OWNER && GITHUB_REPO
   ? `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`
   : '#';
+const WEBSITE_URL = 'https://mr-override.github.io/athia/';
 
 // === In-memory cache ===
 let statsCache = null;
