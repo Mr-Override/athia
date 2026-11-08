@@ -11,14 +11,10 @@ const GITHUB_REPO = 'athia';
 const REPO_URL = GITHUB_OWNER && GITHUB_REPO
   ? `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`
   : '#';
-const WEBSITE_URL = 'https://mr-override.github.io/athia/';
 
 // === Repository Link Resolver ===
-// Resolves links with data-repo-path to GitHub blob URLs.
-// Usage: <a href="#" data-repo-path="README.md">README</a>
 function resolveRepoLinks() {
   if (!GITHUB_OWNER || !GITHUB_REPO) {
-    // If not configured, leave href="#" — links will be non-functional but won't 404
     return;
   }
   const branch = 'main';
@@ -31,7 +27,6 @@ function resolveRepoLinks() {
       link.rel = 'noopener';
     }
   });
-  // Resolve footer Repository links to the actual repo URL
   const footerRepoLinks = document.querySelectorAll('a[data-repo-link]');
   footerRepoLinks.forEach(link => {
     link.href = REPO_URL;
@@ -40,8 +35,50 @@ function resolveRepoLinks() {
   });
 }
 
-// === Mobile Navigation ===
+// === Scroll Reveal ===
+function initScrollReveal() {
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  const reveals = document.querySelectorAll('.section-reveal');
+  if (!reveals.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Trigger staggered card reveal: keep .revealing for transition rules, add .revealed for visible state
+        const grids = entry.target.querySelectorAll('.card-grid.revealing, .philosophy-grid.revealing, .info-grid.revealing, .steps-list.revealing');
+        grids.forEach(grid => {
+          grid.classList.add('revealed');
+        });
+        // After reveal animation completes, remove both classes so hover transitions work normally
+        const maxDelay = grids.length ? 800 : 0;
+        if (maxDelay) {
+          setTimeout(() => {
+            grids.forEach(grid => {
+              grid.classList.remove('revealing');
+              grid.classList.remove('revealed');
+            });
+          }, maxDelay);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  reveals.forEach(section => {
+    observer.observe(section);
+  });
+}
+
+// === Initialize ===
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile navigation
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   if (toggle && nav) {
@@ -56,39 +93,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll reveal animations
   initScrollReveal();
 });
-
-// === Scroll Reveal ===
-function initScrollReveal() {
-  // Check for reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
-
-  const sections = document.querySelectorAll('.section, .community-cta, .page-header, .content');
-  if (!sections.length) return;
-
-  // Add reveal class to sections
-  sections.forEach(section => {
-    section.classList.add('reveal');
-  });
-
-  // Use IntersectionObserver for performant scroll detection
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    sections.forEach(section => observer.observe(section));
-  } else {
-    // Fallback: show all sections immediately
-    sections.forEach(section => section.classList.add('visible'));
-  }
-}
-

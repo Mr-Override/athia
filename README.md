@@ -4,6 +4,12 @@
 
 An independent, open-source operating system built from the ground up in Rust.
 
+[![GitHub license](https://img.shields.io/github/license/Mr-Override/athia?style=flat-square)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/Mr-Override/athia?style=flat-square)](https://github.com/Mr-Override/athia/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Mr-Override/athia?style=flat-square)](https://github.com/Mr-Override/athia/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Mr-Override/athia?style=flat-square)](https://github.com/Mr-Override/athia/network)
+[![Website](https://img.shields.io/badge/website-live-blue?style=flat-square)](https://mr-override.github.io/athia/)
+
 **⚠️ Early-stage project — Athia is not ready for daily use. This repository contains architectural documentation and project scaffolding. No functional operating system code has been implemented yet.**
 
 ## What is Athia?
@@ -126,3 +132,19 @@ See [SUPPORT.md](SUPPORT.md) for information on communication channels and commu
 ## Security
 
 If you discover a security vulnerability, please follow the responsible disclosure process described in [SECURITY.md](SECURITY.md).
+
+## Contributors
+
+Thanks goes to all the wonderful people who contribute to Athia.
+
+<!-- prettier-ignore-start -->
+
+<!-- markdownlint-disable -->
+<a href="https://github.com/Mr-Override/athia/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Mr-Override/athia" alt="Contributors" />
+</a>
+<!-- markdownlint-restore -->
+
+<!-- prettier-ignore-end -->
+
+Contributions of any kind are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get involved.
