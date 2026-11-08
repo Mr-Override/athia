@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athia — Your machine. Your rules.</title>
+  <meta name="description" content="An independent, open-source operating system built from the ground up in Rust. Designed around freedom, security, transparency and complete user control.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">ATHIA<span>.</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="community.html">Community</a>
+        <a href="contributing.html">Contributing</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Your machine. Your rules.</h1>
+      <p class="subtitle">An independent, open-source operating system built from the ground up in Rust. Designed around freedom, security, transparency and complete user control.</p>
+      <div class="cta-group">
+        <a href="about.html" class="btn btn-primary">Explore the project</a>
+        <a href="community.html" class="btn btn-secondary">Join the community</a>
+      </div>
+      <span class="warning">⚠ Athia is under active development and is not ready for everyday use.</span>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Philosophy</h2>
+        <p>Athia is built around nine founding principles that put users first.</p>
+      </div>
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <h3>User Sovereignty</h3>
+          <p>You own and control your computer. No corporation, no cloud provider — you.</p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Security First</h3>
+          <p>Security is a foundational architectural requirement, not an afterthought.</p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Open Source</h3>
+          <p>Development, documentation, and decision-making are transparent.</p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Offline First</h3>
+          <p>The OS remains fully functional without internet connectivity.</p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Transparency</h3>
+          <p>Every line of code and design decision is visible and discussable.</p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Community Ownership</h3>
+          <p>Governed transparently and developed collaboratively by the community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Independent Architecture</h2>
+        <p>Athia has its own microkernel. It is not based on Linux or any existing operating system.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="arch-layer arch-layer-apps">Applications &amp; Desktop</div>
+        <div class="arch-layer arch-layer-services">System Services</div>
+        <div class="arch-layer arch-layer-core">Athia Core (Microkernel)</div>
+        <div class="arch-layer arch-layer-hw">Hardware</div>
+      </div>
+      <p style="text-align:center; color:var(--color-text-secondary); margin-top:var(--space-lg); font-size:var(--font-size-sm);">
+        Architecture is proposed and not yet implemented.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Planned Features</h2>
+        <p>Athia is designed to be a complete, polished operating system.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Athia Core</h3>
+          <p>The microkernel handling memory, scheduling, IPC, and hardware abstraction.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Athia Desktop</h3>
+          <p>A modern, customizable desktop environment with dock, taskbar, and animations.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Traffic Control</h3>
+          <p>A universal command center for search, settings, commands, and automation.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Athia Studio</h3>
+          <p>An integrated development environment for building Athia applications.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Athia Appearance Engine</h3>
+          <p>Theming and customization with design tokens and four official theme families.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Athia Packages</h3>
+          <p>A package management system for distributing and updating software.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>Athia Sentinel</h3>
+          <p>A security management system for monitoring and threat detection.</p>
+        </div>
+        <div class="card">
+          <span class="status status-planned">Planned</span>
+          <h3>User-Controlled Updates</h3>
+          <p>Updates are never silently forced. You decide when — and whether — to apply them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Repository Activity</h2>
+        <p>Live statistics from the Athia GitHub repository.</p>
+      </div>
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card"><div class="stat-loading">Loading...</div></div>
+        <div class="stat-card"><div class="stat-loading">Loading...</div></div>
+        <div class="stat-card"><div class="stat-loading">Loading...</div></div>
+        <div class="stat-card"><div class="stat-loading">Loading...</div></div>
+        <div class="stat-card"><div class="stat-loading">Loading...</div></div>
+        <div class="stat-card"><div class="stat-loading">Loading...</div></div>
+      </div>
+      <div class="stats-info" id="stats-info"></div>
+    </div>
+  </section>
+
+  <!-- Community CTA -->
+  <section class="community-cta">
+    <div class="container">
+      <h2>Join the Community</h2>
+      <p>Building an operating system is one of the most ambitious software projects possible. We need kernel engineers, designers, documentation writers, testers, and community organizers. You don't need to be an expert — you need to care about the problem.</p>
+      <p style="color:var(--color-accent-primary); font-weight:var(--font-weight-semibold); margin-bottom:var(--space-lg);">Come build something extraordinary with us.</p>
+      <p style="color:var(--color-text-secondary); margin-bottom:var(--space-xl);">Join in on the fun.</p>
+      <div class="cta-group">
+        <a href="contributing.html" class="btn btn-primary">Start contributing</a>
+        <a href="community.html" class="btn btn-secondary">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <p><strong>Athia</strong> — <span class="motto">"Your machine. Your rules."</span></p>
+        <p>&copy; Athia contributors. License TBD.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" data-repo-link>Repository</a>
+        <a href="#" data-repo-path="docs/README.md">Documentation</a>
+        <a href="contributing.html">Contribute</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

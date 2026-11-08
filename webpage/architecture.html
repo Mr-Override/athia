@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture — Athia</title>
+  <meta name="description" content="Learn about Athia's independent microkernel architecture, system services, and desktop environment.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">ATHIA<span>.</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="architecture.html" class="active">Architecture</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="community.html">Community</a>
+        <a href="contributing.html">Contributing</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Architecture</h1>
+      <p>Athia's independent microkernel architecture, designed for security, modularity, and user control.</p>
+    </div>
+  </div>
+
+  <div class="content container">
+    <p><em>All architecture described below is proposed and not yet implemented.</em></p>
+
+    <h2>System Architecture</h2>
+    <div class="arch-diagram">
+      <div class="arch-layer arch-layer-apps">Applications &amp; Desktop</div>
+      <div class="arch-layer arch-layer-services">System Services (Filesystem, Network, Devices, Graphics)</div>
+      <div class="arch-layer arch-layer-core">Athia Core — Memory, Scheduling, IPC, HVA</div>
+      <div class="arch-layer arch-layer-hw">Hardware</div>
+    </div>
+
+    <h2>Athia Core (Microkernel)</h2>
+    <p>The microkernel provides only essential services: memory management, scheduling, inter-process communication, and hardware abstraction. Everything else runs in isolated user-space services.</p>
+    <ul>
+      <li><strong>Memory management</strong> — Capability-based physical and virtual memory</li>
+      <li><strong>Scheduling</strong> — Priority-based preemptive scheduling with real-time support</li>
+      <li><strong>IPC</strong> — Fast, type-safe, capability-based message passing</li>
+      <li><strong>Hardware abstraction</strong> — Unified interface to hardware resources</li>
+    </ul>
+
+    <h2>System Services</h2>
+    <p>System services run in user space as isolated processes:</p>
+    <ul>
+      <li><strong>Filesystem service</strong> — Storage, file operations, and namespace management</li>
+      <li><strong>Networking service</strong> — Network interfaces, protocols, and connections</li>
+      <li><strong>Device service</strong> — Hardware devices, input, and peripherals</li>
+      <li><strong>Graphics service</strong> — Display output, compositing, and hardware acceleration</li>
+    </ul>
+
+    <h2>Desktop Architecture</h2>
+    <p>Athia Desktop provides the graphical user interface:</p>
+    <ul>
+      <li><strong>Athia Shell</strong> — Panel (dock/taskbar), Traffic Control, and system tray</li>
+      <li><strong>Window Manager</strong> — Modular: tiling, floating, or hybrid modes</li>
+      <li><strong>Appearance Engine</strong> — Theming with design tokens and four official themes</li>
+      <li><strong>Display Server</strong> — ADP protocol, compositor, and hardware acceleration</li>
+      <li><strong>Extension Host</strong> — Sandbox-first extensions with WebAssembly/WASI</li>
+    </ul>
+
+    <h2>Rust-First Design</h2>
+    <p>Athia is written primarily in Rust for memory safety, concurrency safety, and zero-cost abstractions. No garbage collector, no data races, no buffer overflows at the language level.</p>
+
+    <h2>Security</h2>
+    <ul>
+      <li><strong>Capability-based security</strong> — Unforgeable tokens grant specific rights</li>
+      <li><strong>Process isolation</strong> — Every process runs in its own address space</li>
+      <li><strong>Sandbox-first</strong> — Applications run in sandboxes by default</li>
+      <li><strong>Memory safety</strong> — Rust enforces safety at compile time</li>
+    </ul>
+
+    <h2>Learn More</h2>
+    <p>For detailed architecture documentation, see the <a href="#" data-repo-path="ARCHITECTURE.md">ARCHITECTURE.md</a> file and the <a href="#" data-repo-path="docs/architecture/">architecture documentation</a>.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <p><strong>Athia</strong> — <span class="motto">"Your machine. Your rules."</span></p>
+        <p>&copy; Athia contributors. License TBD.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" data-repo-link>Repository</a>
+        <a href="#" data-repo-path="docs/README.md">Documentation</a>
+        <a href="contributing.html">Contribute</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

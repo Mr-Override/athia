@@ -1,0 +1,22 @@
+# Athia — A modern, open-source operating system built in Rust.
+# See https://athia.dev for project information.
+
+[workspace]
+resolver = "2"
+members = []
+
+# Future workspace members (planned):
+#   - kernel/          — Athia Core microkernel
+#   - services/        — System services (filesystem, networking, devices)
+#   - desktop/         — Athia Desktop environment and Appearance Engine
+#   - applications/    — User-space applications
+#   - sdk/             — Athia SDK and developer tools
+#   - tools/           — Build, testing, and maintenance tools
+
+[workspace.package]
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.85"
+license = "TBD"
+repository = "https://github.com/athia-os/athia"
+homepage = "https://athia.dev"

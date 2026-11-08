@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap — Athia</title>
+  <meta name="description" content="Athia's phased development roadmap from bootable kernel to daily-driver quality.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">ATHIA<span>.</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="roadmap.html" class="active">Roadmap</a>
+        <a href="community.html">Community</a>
+        <a href="contributing.html">Contributing</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Roadmap</h1>
+      <p>Six phases from bootable kernel foundation to daily-driver quality. All milestones are planned.</p>
+    </div>
+  </div>
+
+  <div class="content container">
+    <p><em>No fixed timeline has been established. Development velocity depends on community participation and available resources.</em></p>
+
+    <div class="roadmap-phase">
+      <h3>Phase 1: Genesis</h3>
+      <span class="phase-status status-planned">Planned</span>
+      <p>Bootable kernel foundation — a minimal kernel that can boot on x86_64 hardware.</p>
+      <div class="roadmap-milestone">
+        <h4>Kernel skeleton</h4>
+        <p>Entry point, GDT/IDT setup, kernel memory layout. Measurable: kernel loads in QEMU.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Memory management</h4>
+        <p>Physical allocator, virtual memory, kernel heap. Measurable: allocate and free without corruption.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Basic hardware abstraction</h4>
+        <p>Serial output, timer interrupts. Measurable: print to serial console.</p>
+      </div>
+    </div>
+
+    <div class="roadmap-phase">
+      <h3>Phase 2: Core</h3>
+      <span class="phase-status status-planned">Planned</span>
+      <p>Kernel functionality and process isolation — a functional microkernel with IPC and scheduling.</p>
+      <div class="roadmap-milestone">
+        <h4>Process management</h4>
+        <p>Process creation, isolated address spaces, capability system.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Inter-Process Communication</h4>
+        <p>Message passing, capability-based routing, sync and async patterns.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Scheduler</h4>
+        <p>Priority-based preemptive scheduling with context switching.</p>
+      </div>
+    </div>
+
+    <div class="roadmap-phase">
+      <h3>Phase 3: Systems</h3>
+      <span class="phase-status status-planned">Planned</span>
+      <p>Essential hardware and system services — filesystem, networking, devices, and graphics.</p>
+      <div class="roadmap-milestone">
+        <h4>Filesystem service</h4>
+        <p>Basic filesystem with file read/write via IPC.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Device service</h4>
+        <p>Keyboard and mouse input delivered to user-space.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Graphics service</h4>
+        <p>Framebuffer output and display protocol foundation.</p>
+      </div>
+    </div>
+
+    <div class="roadmap-phase">
+      <h3>Phase 4: Desktop</h3>
+      <span class="phase-status status-planned">Planned</span>
+      <p>Graphical environment — window management, theming, and user interaction.</p>
+      <div class="roadmap-milestone">
+        <h4>Window manager</h4>
+        <p>Window creation, resizing, movement, and stacking.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Athia Shell</h4>
+        <p>Desktop panel, application launcher, and system tray.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Appearance Engine</h4>
+        <p>Theme system with Midnight, Daylight, Monochrome, and Aurora.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Traffic Control</h4>
+        <p>Application search, file search, and system settings access.</p>
+      </div>
+    </div>
+
+    <div class="roadmap-phase">
+      <h3>Phase 5: Ecosystem</h3>
+      <span class="phase-status status-planned">Planned</span>
+      <p>Package management, applications, and developer tools.</p>
+      <div class="roadmap-milestone">
+        <h4>Athia Packages</h4>
+        <p>Package format, repository, installation, and update.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Athia SDK</h4>
+        <p>Application API framework and UI toolkit.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Athia Studio</h4>
+        <p>IDE with editing, building, and debugging.</p>
+      </div>
+    </div>
+
+    <div class="roadmap-phase">
+      <h3>Phase 6: Stable</h3>
+      <span class="phase-status status-planned">Planned</span>
+      <p>Daily-driver quality — stable, secure, and usable as a primary operating system.</p>
+      <div class="roadmap-milestone">
+        <h4>Stability</h4>
+        <p>Extended stability testing without crashes.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Security hardening</h4>
+        <p>Security audit and Athia Sentinel.</p>
+      </div>
+      <div class="roadmap-milestone">
+        <h4>Community readiness</h4>
+        <p>Community can independently contribute, review, and release updates.</p>
+      </div>
+    </div>
+
+    <h2>Track Progress</h2>
+    <p>Progress on each milestone will be tracked in the project's issue tracker. See <a href="#" data-repo-path="ROADMAP.md">ROADMAP.md</a> for detailed milestones.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <p><strong>Athia</strong> — <span class="motto">"Your machine. Your rules."</span></p>
+        <p>&copy; Athia contributors. License TBD.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" data-repo-link>Repository</a>
+        <a href="#" data-repo-path="docs/README.md">Documentation</a>
+        <a href="contributing.html">Contribute</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
