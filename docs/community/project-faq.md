@@ -44,7 +44,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for details. You don't need to be a
 
 ### Is Athia free to use?
 
-Yes. Athia is open source. The licensing model has not yet been formally selected, but the project is evaluating GPL-3.0-or-later and Apache-2.0.
+Yes. Athia is licensed under **GPL-3.0-or-later**. This ensures Athia and all derivative works remain free and open-source software.
 
 ### Who owns Athia?
 

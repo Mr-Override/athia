@@ -17,6 +17,6 @@ members = []
 version = "0.0.0"
 edition = "2024"
 rust-version = "1.85"
-license = "TBD"
+license = "GPL-3.0-or-later"
 repository = "https://github.com/Mr-Override/athia"
 homepage = "https://mr-override.github.io/athia/"
