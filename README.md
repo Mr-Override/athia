@@ -109,9 +109,9 @@ athia/
 
 ## License
 
-Athia's licensing model has not yet been formally selected. The project is evaluating options including **GPL-3.0-or-later** for copyleft protection and **Apache-2.0** for permissive licensing. A final decision will be made through community discussion and documented in [GOVERNANCE.md](GOVERNANCE.md).
+Athia is licensed under the **GNU General Public License v3.0 or later** (GPL-3.0-or-later). See [LICENSE](LICENSE) for the full license text.
 
-Until a license is chosen, all contributions are held in trust and may be released under the license ultimately selected by the project.
+The GPL-3.0-or-later license ensures that Athia remains free and open-source software. Any derivative work must also be distributed under the same license terms, protecting the freedom of all users.
 
 ## Contributing
 

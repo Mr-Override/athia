@@ -23,4 +23,4 @@ All notable changes to this project will be documented in this file.
 
 - No operating system code has been implemented
 - All architectural descriptions are proposed designs
-- The project license has not yet been selected
+- The project is licensed under GPL-3.0-or-later
