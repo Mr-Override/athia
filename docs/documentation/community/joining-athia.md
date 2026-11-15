@@ -35,7 +35,7 @@ You don't need to be a systems programmer to contribute. Here are some ways to h
 
 - **Issues** — Open issues for bug reports, feature requests, and questions
 - **Pull requests** — Submit pull requests for code and documentation changes
-- **Architecture discussions** — Participate in ADR discussions in [docs/decisions/](../decisions/)
+- **Architecture discussions** — Participate in ADR discussions in [docs/documentation/decisions/](../decisions/)
 
 ### 4. Make Your First Contribution
 

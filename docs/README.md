@@ -4,11 +4,11 @@ This directory contains the detailed documentation for the Athia operating syste
 
 ## Structure
 
-- **[architecture/](architecture/)** — Deep-dives into the system architecture, including the microkernel, desktop environment, graphics, security, and IPC.
-- **[design/](design/)** — Design documents covering the desktop environment, appearance engine, window manager, display server, extension system, and design principles.
-- **[development/](development/)** — Development guidelines, Rust coding standards, testing strategy, and build strategy.
-- **[decisions/](decisions/)** — Architecture Decision Records (ADRs) documenting significant architectural decisions and their rationale.
-- **[community/](community/)** — Community resources, including how to join the project and frequently asked questions.
+- **[documentation/architecture/](documentation/architecture/)** — Deep-dives into the system architecture, including the microkernel, desktop environment, graphics, security, and IPC.
+- **[documentation/design/](documentation/design/)** — Design documents covering the desktop environment, appearance engine, window manager, display server, extension system, and design principles.
+- **[documentation/development/](documentation/development/)** — Development guidelines, Rust coding standards, testing strategy, and build strategy.
+- **[documentation/decisions/](documentation/decisions/)** — Architecture Decision Records (ADRs) documenting significant architectural decisions and their rationale.
+- **[documentation/community/](documentation/community/)** — Community resources, including how to join the project and frequently asked questions.
 
 ## Status
 

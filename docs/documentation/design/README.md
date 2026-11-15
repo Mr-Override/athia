@@ -17,5 +17,5 @@ All documents describe **proposed** designs. No components have been implemented
 
 ## Related Documentation
 
-- **[docs/architecture/](../architecture/)** — Architecture deep-dives
-- **[docs/decisions/](../decisions/)** — Architecture Decision Records
+- **[docs/documentation/architecture/](../architecture/)** — Architecture deep-dives
+- **[docs/documentation/decisions/](../decisions/)** — Architecture Decision Records

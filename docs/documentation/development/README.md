@@ -16,4 +16,4 @@ All documents describe **proposed** guidelines. No code has been implemented. Th
 ## Related Documentation
 
 - **[CONTRIBUTING.md](../../CONTRIBUTING.md)** — Contributing guidelines
-- **[docs/architecture/](../architecture/)** — Architecture deep-dives
+- **[docs/documentation/architecture/](../architecture/)** — Architecture deep-dives

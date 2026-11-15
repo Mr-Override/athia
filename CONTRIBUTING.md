@@ -41,7 +41,7 @@ Documentation is one of the most valuable ways to contribute, especially in the 
 
 Architecture discussions are critical to ensuring Athia is well-designed. You can participate by:
 
-- Reading and reviewing Architecture Decision Records (ADRs) in [docs/decisions/](docs/decisions/)
+- Reading and reviewing Architecture Decision Records (ADRs) in [docs/documentation/decisions/](docs/documentation/decisions/)
 - Proposing new architectural considerations
 - Discussing trade-offs and alternatives
 - Providing feedback on design documents
@@ -89,7 +89,7 @@ When Rust code is contributed, it should follow these guidelines:
 - **Format code** — Use `rustfmt` with project configuration
 - **Clippy clean** — Address all Clippy warnings
 
-See [docs/development/rust-guidelines.md](docs/development/rust-guidelines.md) for detailed Rust guidelines.
+See [docs/documentation/development/rust-guidelines.md](docs/documentation/development/rust-guidelines.md) for detailed Rust guidelines.
 
 ## Testing Expectations
 
@@ -100,7 +100,7 @@ All code contributions should include appropriate tests:
 - **Property-based tests** — Where applicable, test invariants and properties
 - **Benchmark tests** — For performance-critical code, include benchmarks
 
-See [docs/development/testing-strategy.md](docs/development/testing-strategy.md) for the testing strategy.
+See [docs/documentation/development/testing-strategy.md](docs/documentation/development/testing-strategy.md) for the testing strategy.
 
 ## Respectful Collaboration
 

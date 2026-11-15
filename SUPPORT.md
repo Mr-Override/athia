@@ -15,11 +15,11 @@ The best place to start is the project documentation:
 - **[README.md](README.md)** — Project overview and quick start
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** — System architecture
 - **[docs/](docs/)** — Detailed documentation
-  - **[docs/architecture/](docs/architecture/)** — Architecture deep-dives
-  - **[docs/design/](docs/design/)** — Design documents
-  - **[docs/development/](docs/development/)** — Development guidelines
-  - **[docs/decisions/](docs/decisions/)** — Architecture Decision Records
-  - **[docs/community/](docs/community/)** — Community resources
+  - **[docs/documentation/architecture/](docs/documentation/architecture/)** — Architecture deep-dives
+  - **[docs/documentation/design/](docs/documentation/design/)** — Design documents
+  - **[docs/documentation/development/](docs/documentation/development/)** — Development guidelines
+  - **[docs/documentation/decisions/](docs/documentation/decisions/)** — Architecture Decision Records
+  - **[docs/documentation/community/](docs/documentation/community/)** — Community resources
 
 ### Issues
 
@@ -47,7 +47,7 @@ For security-related questions or vulnerability reports, see [SECURITY.md](SECUR
 
 ## Frequently Asked Questions
 
-See [docs/community/project-faq.md](docs/community/project-faq.md) for answers to common questions about the project.
+See [docs/documentation/community/project-faq.md](docs/documentation/community/project-faq.md) for answers to common questions about the project.
 
 ## Expectations
 

@@ -18,5 +18,5 @@ All documents describe **proposed** designs. No components have been implemented
 ## Related Documentation
 
 - **[ARCHITECTURE.md](../../ARCHITECTURE.md)** — High-level architecture overview
-- **[docs/design/](../design/)** — Design documents and principles
-- **[docs/decisions/](../decisions/)** — Architecture Decision Records
+- **[docs/documentation/design/](../design/)** — Design documents and principles
+- **[docs/documentation/decisions/](../decisions/)** — Architecture Decision Records

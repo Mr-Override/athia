@@ -49,7 +49,7 @@ Athia seeks consensus for significant decisions. Consensus does not mean unanimi
 
 ### Architecture Decisions
 
-Significant architectural decisions are documented as Architecture Decision Records (ADRs) in [docs/decisions/](docs/decisions/). The process is:
+Significant architectural decisions are documented as Architecture Decision Records (ADRs) in [docs/documentation/decisions/](docs/documentation/decisions/). The process is:
 
 1. A maintainer or contributor proposes an ADR
 2. The ADR is discussed publicly

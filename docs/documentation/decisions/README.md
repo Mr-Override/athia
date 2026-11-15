@@ -34,5 +34,5 @@ Each ADR contains:
 ## Related Documentation
 
 - **[GOVERNANCE.md](../../GOVERNANCE.md)** — Governance model, including how ADRs are approved
-- **[docs/architecture/](../architecture/)** — Architecture deep-dives
-- **[docs/design/](../design/)** — Design documents
+- **[docs/documentation/architecture/](../architecture/)** — Architecture deep-dives
+- **[docs/documentation/design/](../design/)** — Design documents

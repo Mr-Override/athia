@@ -150,7 +150,7 @@ User space contains the desktop environment, applications, and developer tools. 
 
 The desktop environment provides the graphical user interface, including the window manager, panel, application launcher, and system settings. It is built on the Appearance Engine for theming and customization.
 
-See [docs/architecture/desktop.md](docs/architecture/desktop.md) for detailed desktop architecture.
+See [docs/documentation/architecture/desktop.md](docs/documentation/architecture/desktop.md) for detailed desktop architecture.
 
 ### Applications
 
@@ -185,4 +185,4 @@ Athia is written primarily in Rust. The choice of Rust is fundamental to the arc
 
 This architecture is **proposed** and has not been implemented. All components described above represent design intentions, not working code. The architecture may evolve as development progresses and community feedback is incorporated.
 
-For architectural decisions and their rationale, see the [Architecture Decision Records](docs/decisions/).
+For architectural decisions and their rationale, see the [Architecture Decision Records](docs/documentation/decisions/).

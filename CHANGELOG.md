@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.
 - Security policy ([SECURITY.md](SECURITY.md))
 - Governance model ([GOVERNANCE.md](GOVERNANCE.md))
 - Detailed architecture, design, and development documentation in [docs/](docs/)
-- Architecture Decision Records in [docs/decisions/](docs/decisions/)
+- Architecture Decision Records in [docs/documentation/decisions/](docs/documentation/decisions/)
 - Static project website in [webpage/](webpage/)
 - Cargo workspace manifest for future Rust crates
 

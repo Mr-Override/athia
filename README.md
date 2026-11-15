@@ -54,7 +54,7 @@ Key architectural components:
 - **Athia Packages** — A planned package management system for distributing and updating software.
 - **Athia Sentinel** — A planned security management system.
 
-For detailed architecture, see [ARCHITECTURE.md](ARCHITECTURE.md) and the [architecture documentation](docs/architecture/).
+For detailed architecture, see [ARCHITECTURE.md](ARCHITECTURE.md) and the [architecture documentation](docs/documentation/architecture/).
 
 ## Current Status
 
