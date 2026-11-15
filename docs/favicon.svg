@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="athia-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="50%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="athia-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer shield/hexagon shape representing security and structure -->
+  <path d="M32 4 L56 18 L56 46 L32 60 L8 46 L8 18 Z" fill="none" stroke="url(#athia-grad)" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Inner "A" shape - crown-like, representing sovereignty -->
+  <path d="M32 16 L44 42 L40 42 L37 35 L27 35 L24 42 L20 42 Z" fill="url(#athia-grad)"/>
+  <!-- Horizontal bar of the A -->
+  <rect x="27" y="35" width="10" height="2.5" rx="1" fill="url(#athia-inner)"/>
+  <!-- Core dot - representing the microkernel at the center -->
+  <circle cx="32" cy="26" r="2.5" fill="url(#athia-inner)"/>
+</svg>
